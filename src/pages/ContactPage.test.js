@@ -1,4 +1,4 @@
-/* global it, describe, expect, mount, beforeEach */
+/* global it, describe, expect, mount, beforeEach, jest */
 import React from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import { act } from 'react-dom/test-utils'
