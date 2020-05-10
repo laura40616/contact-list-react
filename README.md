@@ -1,4 +1,8 @@
+# Client List Demo
+An app that fetches clients from an api and displays them. The list is searchable and sortable by name. <br/>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Getting started
 
 ## Available Scripts
 
