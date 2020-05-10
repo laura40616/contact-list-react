@@ -10,8 +10,8 @@ const ContactInfo = ({ contact }) => {
   const zipCode = delve(contact, 'address.zipcode')
   return (
     <>
-      {name && (<>{name}<br/></>)}
-      {email && (<>Email: {email}<br/></>)}
+      {name && (<>{name}<br /></>)}
+      {email && (<>Email: {email}<br /></>)}
       <>Address: {street && (<>{street}, </>)} {suite && (<>{suite}, </>)} {city && (<>{city}, </>)} {zipCode && (<>{zipCode}</>)}</>
     </>
   )

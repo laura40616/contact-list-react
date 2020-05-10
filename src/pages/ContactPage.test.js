@@ -1,21 +1,20 @@
-/* global it, describe, expect, jest */
+/* global it, describe, expect, mount, beforeEach */
 import React from 'react'
-import { GlobalContext, GlobalProvider } from '../context/GlobalState'
+import { GlobalContext } from '../context/GlobalState'
 import { act } from 'react-dom/test-utils'
 import ContactPage from './ContactPage'
-import useGetContacts from '../hooks/useGetContacts'
 import wait from 'waait'
 
 jest.mock('../components/ContactFilter.js', () => () => <div id='contactFilter'>Contact Filter</div>)
 jest.mock('../components/ContactList.js', () => () => <div id='contactList'>Contact List</div>)
 jest.mock('../components/ContactSearch.js', () => () => <div id='contactSearch'>Contact Search</div>)
 describe('<ContactPage />', () => {
-  let windowFetch, addContacts
+  let addContacts
   beforeEach(() => {
     addContacts = jest.fn()
   })
   it('renders the contact page', async () => {
-    windowFetch = window.fetch = jest.fn(
+    window.fetch = jest.fn(
       () => Promise.resolve({
         status: 200,
         json: () => (Promise.resolve())
@@ -38,7 +37,7 @@ describe('<ContactPage />', () => {
 
   it('displays error message if api returns a 404', async () => {
     let result
-    windowFetch = window.fetch = jest.fn(
+    window.fetch = jest.fn(
       () => Promise.resolve({
         status: 404,
         json: () => (Promise.resolve())
@@ -57,7 +56,7 @@ describe('<ContactPage />', () => {
 
   it('displays error message if an error was thrown getting data', async () => {
     let result
-    windowFetch = window.fetch = jest.fn(
+    window.fetch = jest.fn(
       () => Promise.reject(new Error('You are a terrible person'))
     )
     await act(async () => {

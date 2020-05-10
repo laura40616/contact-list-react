@@ -1,4 +1,4 @@
-/* global it, describe, expect, mount, jest */
+/* global it, describe, expect, beforeEach */
 import AppReducer from './AppReducer'
 
 describe('AppReducer', () => {
