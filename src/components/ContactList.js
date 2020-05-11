@@ -3,8 +3,6 @@ import { GlobalContext } from '../context/GlobalState'
 
 import ContactInfo from './ContactInfo'
 
-import './ContactList.css'
-
 const ContactList = () => {
   const { contacts, searchResult, removeContact } = useContext(GlobalContext)
   const contactList = searchResult.length ? searchResult : contacts
