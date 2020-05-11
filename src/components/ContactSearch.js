@@ -20,7 +20,6 @@ const ContactSearch = ({ contacts }) => {
 
   return (
     <div className='input-group container mb-3'>
-      {/* <div className='input-group'> */}
       <input
         type='text'
         id='searchContacts'
@@ -33,7 +32,6 @@ const ContactSearch = ({ contacts }) => {
       <div className='input-group-append'>
         <button className='btn btn-primary' id='clearButton' onClick={clearSearchName}>Clear</button>
       </div>
-      {/* </div> */}
     </div>
   )
 }
